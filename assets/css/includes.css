@@ -1,0 +1,110 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", open-sans, sans-serif;;
+}
+    
+body {
+    background-color: #f0f0f0;
+    width: 100%;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+
+}
+.header-nav h1 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.header-nav {
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn_header{
+    display: inline-block;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 0 10px;
+    background-color: #000;
+}
+
+.btn_header:hover{
+    background-color: #333;
+}
+
+.btn_header a{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 60px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-columna {
+    width: 30%;
+}
+
+.footer-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-item {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.copy {
+    font-size: 14px;
+    color: #ccc;
+}
+
