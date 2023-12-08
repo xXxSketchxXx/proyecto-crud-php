@@ -45,9 +45,9 @@
             <p class="formulario_input-error">Seleccione un fabricante.</p>
         </div>
 
-        <div id="grupo__url_img">
-            <label for="url_img" class="formulario_label">Imagen del producto:</label>
-            <input type="text" name="url_img" id="url_img" placeholder="https://res.cloudinary.com/">
+        <div id="grupo__imagen">
+            <label for="imagen" class="formulario_label">Imagen del producto:</label>
+            <input type="text" name="imagen" id="imagen" placeholder="https://res.cloudinary.com/">
             <p class="formulario_input-error">La imagen del producto es obligatoria, introduzca una válida.</p>
         </div>
         <div id="cont_submit">
@@ -56,6 +56,8 @@
     </form>
 
     <?php require '../includes/footer.php'; ?>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../assets/js/function-forms.js"></script>
 </body>
 
 </html>
