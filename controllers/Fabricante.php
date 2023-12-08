@@ -1,8 +1,7 @@
 <?php
     require_once ('../models/FabricanteModel.php');
 
-    $option = $_REQUEST['op'];
-
+    $option = isset($_REQUEST['op']) ? $_REQUEST['op'] : '';
     $objFabricante = new FabricanteModel();
 
     if ($option == 'getFabricantes') {

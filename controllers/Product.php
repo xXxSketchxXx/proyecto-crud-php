@@ -1,12 +1,16 @@
 <?php
+// Importa la clase ProductModel que contiene las funciones relacionadas con los productos
 require_once('../models/ProductModel.php');
 
+// Inicializa variables y define una respuesta por defecto
 $option = isset($_REQUEST['op']) ? $_REQUEST['op'] : '';
 $objProduct = new ProductModel();
 $arrResponse = array('status' => false, 'msg' => 'Error en la solicitud');
 
+// Evalúa la opción proporcionada y realiza acciones correspondientes
 switch ($option) {
     case 'getProducts':
+        // Obtiene todos los productos y actualiza la respuesta si hay productos disponibles
         $arrProducts = $objProduct->getProducts();
         if (!empty($arrProducts)) {
             $arrResponse['status'] = true;
@@ -15,6 +19,7 @@ switch ($option) {
         break;
 
     case 'getProduct':
+        // Obtiene un producto específico según el ID proporcionado y actualiza la respuesta si el producto existe
         $idProduct = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         if ($idProduct === false || $idProduct === null) {
             $arrResponse['msg'] = 'ID de producto no válido';
@@ -28,6 +33,7 @@ switch ($option) {
         break;
 
     case 'addProduct':
+        // Agrega un nuevo producto con los datos proporcionados y actualiza la respuesta en consecuencia
         $nombre = isset($_POST['nombre']) ? trim($_POST['nombre']) : '';
         $descripcion = isset($_POST['descripcion']) ? trim($_POST['descripcion']) : '';
         $precio = isset($_POST['precio']) ? floatval($_POST['precio']) : 0.0;
@@ -49,6 +55,7 @@ switch ($option) {
         break;
 
     case 'updateProduct':
+        // Actualiza un producto existente con los datos proporcionados y actualiza la respuesta en consecuencia
         $id = isset($_REQUEST['id']) ? filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) : 0;
         $nombre = isset($_POST['nombre']) ? trim($_POST['nombre']) : '';
         $descripcion = isset($_POST['descripcion']) ? trim($_POST['descripcion']) : '';
@@ -71,6 +78,7 @@ switch ($option) {
         break;
 
     case 'deleteProduct':
+        // Elimina un producto según el ID proporcionado y actualiza la respuesta en consecuencia
         $id = isset($_REQUEST['id']) ? filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) : 0;
 
         if ($id <= 0) {
@@ -88,9 +96,11 @@ switch ($option) {
         break;
 
     default:
+        // Opción no válida
         $arrResponse['msg'] = 'Opción no válida';
 }
 
+// Devuelve la respuesta en formato JSON y finaliza la ejecución del script
 echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 exit();
 ?>
